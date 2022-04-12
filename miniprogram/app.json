@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/menu/index",
     "pages/order/index",
-    "pages/me/index"
+    "pages/me/index",
+    "pages/web-view/index",
+    "pages/product/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

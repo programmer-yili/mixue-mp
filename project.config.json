@@ -7,7 +7,7 @@
   "compileType": "miniprogram",
   "projectname": "miniprogram-1",
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": true,
     "postcss": true,
@@ -42,7 +42,6 @@
     "minifyWXML": true,
     "showES6CompileOption": false,
     "useCompilerPlugins": [
-      "typescript",
       "sass"
     ],
     "ignoreUploadUnusedFiles": true
