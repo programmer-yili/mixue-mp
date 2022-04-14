@@ -5,13 +5,14 @@
     "pages/order/index",
     "pages/me/index",
     "pages/web-view/index",
-    "pages/product/detail"
+    "pages/product/detail",
+    "pages/login/index"
   ],
   "window": {
     "backgroundColor": "#fefefe",
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "蜜雪冰城",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

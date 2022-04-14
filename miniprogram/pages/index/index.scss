@@ -1,3 +1,4 @@
+@import '../../style/theme.scss';
 .swiper-container {
   width: 100vw;
   height: 630rpx;
@@ -47,11 +48,10 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 25rpx;
+  padding: 0 20rpx;
   box-sizing: border-box;
   .vip-box {
     display: flex;
-       
     image {
       width: 100rpx;
       height: 100rpx;
@@ -69,7 +69,7 @@
       }
       .tips {
         margin-top: 14rpx;
-        color: #777777;
+        color: $gray-text-color;
         font-size: 24rpx;
       }
     }
@@ -78,14 +78,30 @@
   .coin-box {
     display: flex;
     flex-direction: column;
-    align-items: center;
     image {
       width: 130rpx;
       height: 70rpx;
     }
     .currency {
+      margin-left: 30rpx;
       margin-top: 10rpx;
       color: #d32d25;
     }
   }
+
+  .login-btn {
+    width: 150rpx;
+    height: 65rpx;
+    border-radius: 10rpx;
+    background-color: $primary-color;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25rpx;
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
 }

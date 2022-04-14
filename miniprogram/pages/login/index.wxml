@@ -1,0 +1,8 @@
+<view class="page">
+  <image class="logo" src="../../assets/images/me-avatar.png"></image>
+  <view class="logo-title">蜜雪冰城</view>
+  <view class="intro">成为会员，立享更多优惠福利</view>
+  <view class="login-tip">授权绑定手机号 为您提供更好的服务</view>
+  <button open-type="getPhoneNumber" class="login-btn" bindgetphonenumber="login" >一键登录</button>
+  <view class="cancel">取消</view>
+</view>
