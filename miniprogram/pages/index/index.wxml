@@ -1,4 +1,6 @@
 <view class="page">
+
+    <!-- 轮播图区域 -->
     <view wx:if="{{ swiperList.length }}" class="swiper-container">
       <swiper bindchange="onSwiperChange">
       <swiper-item wx:for="{{ swiperList }}" wx:key="index">
@@ -7,6 +9,23 @@
     </swiper>
       <view class="dots">
         <view class="dot {{ current !== index || 'active' }}" wx:for="{{ swiperList }}" wx:key="index"></view>
+      </view>
+    </view>
+
+    <!-- 会员/积分区域 -->
+    <view class="member-area">
+      <view class="vip-box">
+        <image src="../../assets/images/home-selected.png"></image>
+        <view class="meta">
+          <view class="title">微雪花会员</view>
+          <progress-bar value="{{ 33 }}" width="320rpx" />
+          <view class="tips">再升1级可享【升级礼包】等6项权益</view>
+        </view>
+      </view>
+
+      <view class="coin-box">
+        <image mode="aspectFill" src="../../assets/images/me-selected.png"></image>
+        <view class="currency">51</view>
       </view>
     </view>
 </view>
