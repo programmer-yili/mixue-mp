@@ -1,0 +1,19 @@
+.header {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 109rpx;
+  .search {
+    width: 174rpx;
+    height: 58rpx;
+    background-color: #f5f5f5;
+    border-radius: 29rpx;
+    padding: 0 26rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    color: #d1d1d1;
+  }
+}

@@ -1,0 +1,24 @@
+
+.tabs {
+  display: flex;
+  position: relative;
+  .tab {
+    font-size: 28rpx;
+    margin-right: 20rpx;
+    color: #777777;
+    &.active {
+      color: #000000;
+      font-weight: bold;
+    }
+  }
+
+  .line {
+    width: 70rpx;
+    height: 4rpx;
+    background-color: #E60012;
+    position: absolute;
+    bottom: -22rpx;
+    left: 0;
+    transition: all 0.5s;
+  }
+}

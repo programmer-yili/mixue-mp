@@ -1,1 +1,115 @@
 /* pages/me/index.wxss */
+@import '../../style/theme.scss';
+
+.page {
+  background: linear-gradient(to bottom, #fbe7e6, #f8f8f8); 
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  padding-top: 170rpx;
+  .user-area { 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 26rpx;
+    .user-box {
+      display: flex;
+      align-items: center;
+      .avatar {
+        width: 120rpx;
+        height: 120rpx;
+      }
+      .name {
+        font-size: 28rpx;
+        margin-left: 24rpx;
+      }
+    }
+    .login-btn {
+      width: 150rpx;
+      height: 62rpx;
+      border-radius: 10rpx;
+      background-color: $primary-color;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 25rpx;
+      &:active {
+        opacity: 0.6;
+      }
+    } 
+  }
+  .card-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 26rpx;
+    .card {
+      width: 330rpx;
+      background-color: #fff;
+      border-radius: 15rpx;
+      box-sizing: border-box;
+      padding: 23rpx;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .meta {
+        .count {
+          font-size: 24rpx;
+          font-weight: bold;
+        }
+
+        .name {
+          font-size: 17rpx;
+          color: $gray-text-color;
+        }
+      }
+      .icon {
+        width: 72rpx;
+        height: 72rpx;
+      }
+    }
+  }
+
+  .list-items {
+    margin-bottom: 26rpx;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: #fff;
+    .item {
+            display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 36rpx 30rpx;
+      .content {
+        display: flex;
+        align-items: center;
+        .icon {
+          width: 40rpx;
+          height: 40rpx;
+          margin-right: 25rpx;
+        }
+        .label {
+          font-size: 26rpx;  
+        }
+      }
+      .left-arrow {
+        font-size: 20rpx;
+        display: flex;
+      }
+    }
+
+    &.app-download {
+      border-radius: 10rpx;
+      
+      .tips {
+        margin-right: 10rpx;
+        font-size: 24rpx;
+        color: $gray-text-color;
+      }
+    }
+  }
+}

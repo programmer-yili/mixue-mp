@@ -29,4 +29,23 @@
       </view>
       <view wx:if="{{ !memberInfo }}" class="login-btn" bindtap="gotoLogin">授权登录</view>
     </view>
+
+    <!-- 点餐banner   -->
+    <view class="menu-banner">
+      <view class="location">
+        <image src="../../assets/images/menu.png"></image>
+        <view class="name">潘水店</view>
+      </view>
+      <image class="menu-card" src="../../assets/images/menu-banner.jpg" bindtap="onMenuCardClick"></image>
+    </view>
+
+    <view class="banner-list">
+      <image class="banner" src="../../assets/images/banner-1.jpg" bindtap="onArticleClick">
+      </image>
+      <image class="banner" src="../../assets/images/banner-2.jpg">
+      </image>
+      <image class="banner" src="../../assets/images/banner-3.jpg">
+      </image>
+    </view>
+
 </view>

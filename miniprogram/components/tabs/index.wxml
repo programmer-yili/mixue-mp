@@ -1,0 +1,4 @@
+<view class="tabs">
+      <view wx:for="{{ tabs }}" wx:key="index" class="tab {{ index === current ? 'active' : '' }}" bindtap="onTab" data-index="{{ index }}">{{ item.label }}</view>
+      <view class="line" style="{{ 'width: ' + linePositionWidth + 'px; left: ' + linePositionX + 'px' }}"></view>
+</view>

@@ -50,6 +50,7 @@
   align-items: center;
   padding: 0 20rpx;
   box-sizing: border-box;
+  margin-bottom: 44rpx;
   .vip-box {
     display: flex;
     image {
@@ -104,4 +105,45 @@
     }
   }
 
+}
+
+.menu-banner {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  margin-bottom: 36rpx;
+  .location {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15rpx;
+    image {
+      width: 18rpx;
+      height: 24rpx;
+    }
+    .name {
+      font-size: 22rpx;
+      margin-left: 14rpx;
+    }
+
+  }
+  .menu-card {
+    width: 688rpx;
+    height: 340rpx;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    border-radius: 16rpx;
+  }
+}
+
+.banner-list {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  width: 100%;
+  justify-content: space-between;
+  .banner {
+    width: 216rpx;
+    height: 160rpx;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    border-radius: 16rpx;
+  }
 }

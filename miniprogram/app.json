@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/store/index",
     "pages/menu/index",
     "pages/order/index",
     "pages/me/index",
@@ -24,7 +25,7 @@
       "iconPath": "./assets/images/home.png",
       "selectedIconPath": "./assets/images/home-selected.png"
     }, {
-      "pagePath": "pages/menu/index",
+      "pagePath": "pages/store/index",
       "text": "点餐",
       "iconPath": "./assets/images/menu.png",
       "selectedIconPath": "./assets/images/menu-selected.png"
