@@ -1,17 +1,53 @@
 <view class="page">
-  <view class="header"> 
+  <view class="header">
     <tabs tabs="{{ [{ value: 'nearby', label: '附近门店' }, {value: 'recent', label: '常去门店'}] }}"></tabs>
     <input class="search" placeholder="搜索门店" type="text" />
   </view>
 
-  <view class="map">
-  
+  <map id="store-map" class="store-map" latitude="{{ latitude }}" longitude="{{ longitude }}"
+   show-location markers="{{ markers }}">
+   <image class="current-icon" src="../../assets/images/current.png" bindtap="goToCurrentLocation"></image>
+   </map>
+
+  <view class="collapse-area">
+    收起地图
   </view>
 
-  <view class="collapse-area"></view>
+  <scroll-view class="store-list" scroll-y>
+    <view class="store-box">
+      <view class="info-area">
+        <view class="name">蜜雪冰城（潘水店）</view>
+        <view class="info">潘水路191号</view>
+        <view class="info">营业时间: 09:00 ~ 22:00</view>
+        <view class="tag">营业中</view>
+      </view>
 
-  <scroll-view class="store-list">
-    
+      <view class="location-area">
+        <view class="distance">距离1.3km</view>
+        <view class="action-area">
+          <image class="location" src="../../assets/images/location.jpg"></image>
+          <image class="phone" src="../../assets/images/phone.jpg"></image>
+        </view>
+      </view>
+
+    </view>
+    <view class="store-box">
+      <view class="info-area">
+        <view class="name">蜜雪冰城（潘水店）</view>
+        <view class="info">潘水路191号</view>
+        <view class="info">营业时间: 09:00 ~ 22:00</view>
+        <view class="tag">营业中</view>
+      </view>
+
+      <view class="location-area">
+        <view class="distance">距离1.3km</view>
+        <view class="action-area">
+          <image class="location" src="../../assets/images/location.jpg"></image>
+          <image class="phone" src="../../assets/images/phone.jpg"></image>
+        </view>
+      </view>
+
+    </view>
   </scroll-view>
 
 

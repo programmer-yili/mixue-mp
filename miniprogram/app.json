@@ -9,6 +9,11 @@
     "pages/product/detail",
     "pages/login/index"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于给您匹配最佳门店"
+    }
+  },
   "window": {
     "backgroundColor": "#fefefe",
     "backgroundTextStyle": "dark",
