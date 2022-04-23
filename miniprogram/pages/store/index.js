@@ -1,6 +1,8 @@
 import storeApi from "../../api/store"
 const QQMapWX = require('../../utils/qqmap-wx-jssdk.min.js');
 const computedBehavior = require('miniprogram-computed').behavior
+const key = '5SOBZ-SJDL6-J47SK-MNS4A-OY7J2-4VBKA'
+const chooseLocation = requirePlugin('chooseLocation');
 
 // pages/store/index.js
 Page({
@@ -12,12 +14,15 @@ Page({
   data: {
     latitude: 0,
     longitude: 0,
-    
     storeList: [],
     dict: {
       'OPENING': '营业中',
       'CLOSED': '已关闭'
-    }
+    },
+    storeDetailShow: false,
+    currentStore: null,
+    collapse: false,
+    mapKey: key
   },
   computed: {
     markers(data) {
@@ -43,8 +48,67 @@ Page({
     await this.loadCurrentLocation()
     this.initMapContext()
   },
+
+  onShow() {
+
+    const location  = chooseLocation.getLocation(); // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
+    if (location) {
+      const { latitude, longitude } = location
+      this.setData({
+        latitude,
+        longitude
+      })
+      this.fetchStoreList();
+    }
+
+  },
+
+  onUnload () {
+    chooseLocation.setLocation(null);
+},
+
+onMarkerTab(e) {
+  const { markerId } = e.detail
+  const store = this.data.storeList[markerId-1]
+  this.setData({
+    storeDetailShow: true,
+    currentStore: store
+  })
+},
+
+
+  chooseLocation() {
+    const key = this.data.mapKey
+    const referer = '程序猿依力'; //调用插件的app的名称
+    const location = JSON.stringify({
+      latitude: this.data.latitude,
+      longitude: this.data.longitude
+    });
+     
+    wx.navigateTo({
+      url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer + '&location=' + location
+    });
+    
+  },
+
+  
+
+
+
+  popupStoreDetail(e) {
+    const { store } = e.currentTarget.dataset
+    this.setData({
+      storeDetailShow: true,
+      currentStore: store
+    })
+  },
+  colsapse() {
+    this.setData({
+      collapse: !this.data.collapse
+    })
+  },
   initMapSdk() {
-    this.mapSdk = new QQMapWX({key: 'XGBBZ-HYV6W-MJ3RA-OHQCA-FGNYS-2WFW4'})
+    this.mapSdk = new QQMapWX({key})
   },
   fetchStoreList() {
     storeApi.list(this.data.longitude, this.data.latitude).then(res=>{
@@ -69,6 +133,12 @@ Page({
 
 
   makeStoreList(storeList) {
+    if(storeList.length === 0) {
+      this.setData({
+        storeList: []
+      })
+    }
+
 
     const locationList = storeList.map(item =>{
       const location = item.location
@@ -78,6 +148,10 @@ Page({
       }
     })
     this.mapSdk.calculateDistance({
+      from: {
+        latitude: this.data.latitude,
+        longitude: this.data.longitude,
+      },
       to: locationList,
       success: (res) => {
         storeList.forEach((item, key)=>{
@@ -114,5 +188,6 @@ Page({
 
   goToCurrentLocation() {
     this.mapContext.moveToLocation()
+    this.loadCurrentLocation()
   }
 })
