@@ -14,40 +14,24 @@
   </view>
 
   <scroll-view class="store-list" scroll-y>
-    <view class="store-box">
+    <view wx:for="{{ storeList }}" wx:key="index" class="store-box">
       <view class="info-area">
-        <view class="name">蜜雪冰城（潘水店）</view>
-        <view class="info">潘水路191号</view>
-        <view class="info">营业时间: 09:00 ~ 22:00</view>
-        <view class="tag">营业中</view>
+        <view class="name">{{ item.name }}</view>
+        <view class="info">{{ item.address }}</view>
+        <view class="info">营业时间: {{ item.opening_time }}</view>
+        <view class="tag">{{ dict[item.status] }}</view>
       </view>
 
       <view class="location-area">
-        <view class="distance">距离1.3km</view>
+        <view class="distance">距离{{ item.distance }}km</view>
         <view class="action-area">
-          <image class="location" src="../../assets/images/location.jpg"></image>
-          <image class="phone" src="../../assets/images/phone.jpg"></image>
+          <image class="location" bindtap="navigateLocation" data-location="{{ item.location }}" src="../../assets/images/location.jpg"></image>
+          <image class="phone" bindtap="call" data-phone="{{ item.phone }}" src="../../assets/images/phone.jpg"></image>
         </view>
       </view>
 
     </view>
-    <view class="store-box">
-      <view class="info-area">
-        <view class="name">蜜雪冰城（潘水店）</view>
-        <view class="info">潘水路191号</view>
-        <view class="info">营业时间: 09:00 ~ 22:00</view>
-        <view class="tag">营业中</view>
-      </view>
 
-      <view class="location-area">
-        <view class="distance">距离1.3km</view>
-        <view class="action-area">
-          <image class="location" src="../../assets/images/location.jpg"></image>
-          <image class="phone" src="../../assets/images/phone.jpg"></image>
-        </view>
-      </view>
-
-    </view>
   </scroll-view>
 
 
