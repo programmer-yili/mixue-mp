@@ -4,7 +4,7 @@
       <image class="avatar" src="../../assets/images/me-avatar.png"></image>
       <view class="name">{{ desensitiveMobile ? desensitiveMobile :  '登录获得更多会员权益'}}</view>
     </view>
-    <view wx:if="{{ !mobile }}" class="login-btn" bindtap="login">授权登录</view>
+    <view wx:if="{{ !user }}" class="login-btn" bindtap="login">授权登录</view>
   </view>
   <view class="card-container">
     <view class="card">
@@ -31,21 +31,21 @@
          </view>
          <view class="left-arrow">></view>
     </view>
-    <view class="item">
+    <view class="item" bindtap="gotoCustomPage" data-code="privacy">
          <view class="content">
           <image class="icon" src="../../assets/images/lock.png"></image>
-          <view class="label">隐私政策</view>
+          <view class="label"  >隐私政策</view>
          </view>
          <view class="left-arrow">></view>
     </view>
-    <view class="item">
+    <view class="item"  bindtap="gotoCustomPage" data-code="agreement">
          <view class="content">
           <image class="icon" src="../../assets/images/paper.png"></image>
           <view class="label">用户协议</view>
          </view>
          <view class="left-arrow">></view>
     </view>
-    <view class="item">
+    <view class="item" bindtap="gotoCustomPage" data-code="xuke">
          <view class="content">
           <image class="icon" src="../../assets/images/xuke.png"></image>
           <view class="label">经营信息公示</view>

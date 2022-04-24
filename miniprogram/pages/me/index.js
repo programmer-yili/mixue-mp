@@ -6,11 +6,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    mobile: ''
+    user: null
   },
   computed: {
     desensitiveMobile(data) {
-      let mobile = data.mobile
+      if (!data.user) {
+        return ''
+      }
+      let mobile = data.user.phone_number
       if (mobile) {
         mobile = mobile.replace(/^(\d{3})\d{6}(\d{2})$/, "$1******$2")
       }
@@ -18,11 +21,20 @@ Page({
     },
   },
   onShow() {
-    const mobile = wx.getStorageSync('phoneNumber')
-    this.setData({
-      mobile
-    })
 
+    if (!this.data.user) {
+      const user = wx.getStorageSync('user')
+      this.setData({
+        user
+      })
+    }
+
+  },
+  gotoCustomPage(e) {
+    const {code} = e.currentTarget.dataset
+    wx.navigateTo({
+      url: `/pages/custom-page/index?code=${code}`,
+    })
   },
   login() {
     wx.navigateTo({

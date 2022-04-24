@@ -8,7 +8,8 @@ Page({
   data: {
     swiperList: [],
     current: 0,
-    memberInfo: false
+    memberInfo: false,
+    user: null
   },
 
   onSwiperChange(e) {
@@ -28,8 +29,9 @@ Page({
       })
     })
 
-  },
 
+
+  },
   onMenuCardClick() {
     wx.switchTab({
       url: '/pages/menu/index',
@@ -43,17 +45,14 @@ Page({
   },
 
   onShow() {
-    this.loadMemberInfo();
-  },
-
-  loadMemberInfo() {
-    console.log(wx.getStorageSync('phoneNumber'))
-    if (wx.getStorageSync('phoneNumber')) {
+    if (!this.data.user) {
+      const user = wx.getStorageSync('user')
       this.setData({
-        memberInfo: true
+        user
       })
     }
   },
+
 
   gotoLogin() {
     wx.navigateTo({

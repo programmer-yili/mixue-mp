@@ -1,4 +1,4 @@
-const db = wx.cloud.database()
+import {db} from './cloud-init'
 const _ = db.command
 
 const list = (longitude, latitude) => {

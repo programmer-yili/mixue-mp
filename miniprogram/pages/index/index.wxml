@@ -17,17 +17,18 @@
       <view class="vip-box">
         <image src="../../assets/images/vip-pic.png"></image>
         <view class="meta">
-          <view class="title">{{ memberInfo ? '微雪花会员' : '尊敬的用户'}}</view>
-          <progress-bar value="{{ 33 }}" width="320rpx" />
-          <view class="tips">{{ memberInfo ? '再升1级可享【升级礼包】等6项权益' : '会员可享【闲时优惠】等多项权益' }}</view>
+          <view class="title">{{ user ? '微雪花会员' : '尊敬的用户'}}</view>
+          <progress-bar wx:if="{{ user }}" value="{{ 33 }}" width="320rpx" />
+          <view class="tips">{{ user ? '再升1级可享【升级礼包】等6项权益' : '会员可享【闲时优惠】等多项权益' }}</view>
         </view>
       </view>
 
-      <view wx:if="{{ memberInfo }}" class="coin-box">
+      <view wx:if="{{ user }}" class="coin-box">
         <image mode="aspectFill" src="../../assets/images/coin.png"></image>
         <view class="currency">51</view>
       </view>
-      <view wx:if="{{ !memberInfo }}" class="login-btn" bindtap="gotoLogin">授权登录</view>
+
+      <view wx:if="{{ !user }}" class="login-btn" bindtap="gotoLogin">授权登录</view>
     </view>
 
     <!-- 点餐banner   -->
