@@ -1,12 +1,13 @@
 import storeApi from "../../api/store"
+import user from "../../api/user";
 const QQMapWX = require('../../utils/qqmap-wx-jssdk.min.js');
 const computedBehavior = require('miniprogram-computed').behavior
 const key = '5SOBZ-SJDL6-J47SK-MNS4A-OY7J2-4VBKA'
 const chooseLocation = requirePlugin('chooseLocation');
-
+import {userBehavior} from '../../behaviors/user-behavior'
 // pages/store/index.js
 Page({
-  behaviors: [computedBehavior],
+  behaviors: [userBehavior, computedBehavior],
 
   /**
    * 页面的初始数据
@@ -172,18 +173,11 @@ onMarkerTab(e) {
   },
 
   async loadCurrentLocation() {
-    wx.getLocation({
-      type: 'wgs84',
-      success: (res) => {
-        const latitude = res.latitude
-        const longitude = res.longitude
-        this.setData({
-          latitude,
-          longitude
-        })
-        this.fetchStoreList()
-      }
-     })
+    this.setData({
+      latitude: this.data.user.location.latitude,
+      longitude: this.data.user.location.longitude
+    })
+    this.fetchStoreList()
   },
 
   goToCurrentLocation() {

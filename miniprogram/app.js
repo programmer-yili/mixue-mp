@@ -1,13 +1,28 @@
 // app.ts
 import userApi from './api/user'
 
+import {userBehavior} from './behaviors/user-behavior'
+
 App({
+  behaviors: [],
   globalData: {
   },
   onLaunch() {
     if(!this.isLogin()) {
       this.checkUser()
     }
+  },
+  loadCurrentLocation() {
+    this.updateLocation()
+    wx.getLocation({
+      type: 'wgs84',
+      success: (res) => {
+        const latitude = res.latitude
+        const longitude = res.longitude
+        wx.setStorageSync('location', { longitude, latitude })
+        this.updateLocation()
+      }
+     })
   },
   isLogin() {
     return Boolean(wx.getStorageSync('user'))

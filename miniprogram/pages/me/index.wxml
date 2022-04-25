@@ -2,9 +2,9 @@
   <view class="user-area">
     <view class="user-box">
       <image class="avatar" src="../../assets/images/me-avatar.png"></image>
-      <view class="name">{{ desensitiveMobile ? desensitiveMobile :  '登录获得更多会员权益'}}</view>
+      <view class="name">{{ (user && user.desensitiveMobile) ? user.desensitiveMobile :  '登录获得更多会员权益'}}</view>
     </view>
-    <view wx:if="{{ !user }}" class="login-btn" bindtap="login">授权登录</view>
+    <view wx:if="{{ !(user && user.desensitiveMobile) }}" class="login-btn" bindtap="login">授权登录</view>
   </view>
   <view class="card-container">
     <view class="card">

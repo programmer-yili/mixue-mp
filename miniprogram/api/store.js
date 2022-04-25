@@ -10,6 +10,7 @@ const list = (longitude, latitude) => {
   }).limit(10).get()
 }
 
+
 export default {
   list
 }

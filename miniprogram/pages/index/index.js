@@ -1,7 +1,10 @@
 // pages/index/index.ts
+import storeApi from "../../api/store";
 import swiper from "../../api/swiper"
-Page({
+import { userBehavior } from "../../behaviors/user-behavior";
 
+Page({
+  behaviors: [ userBehavior ],
   /**
    * 页面的初始数据
    */
@@ -9,7 +12,7 @@ Page({
     swiperList: [],
     current: 0,
     memberInfo: false,
-    user: null
+    nearbyStore: null
   },
 
   onSwiperChange(e) {
@@ -22,19 +25,23 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  onShow() {
+    const {location} = this.data.user
+    storeApi.list(location.longitude, location.latitude).then(res=>{
+    
+        !res.data.length || (this.setData({nearbyStore: res.data[0]}))
+    })
+  },
   onLoad() {
     swiper.list().then(res=>{
       this.setData({
         swiperList: res.data
       })
     })
-
-
-
   },
   onMenuCardClick() {
     wx.switchTab({
-      url: '/pages/menu/index',
+      url: '/pages/store/index',
     })
   },
 
@@ -43,16 +50,6 @@ Page({
       url: '/pages/web-view/index?url=https://baidu.com',
     })
   },
-
-  onShow() {
-    if (!this.data.user) {
-      const user = wx.getStorageSync('user')
-      this.setData({
-        user
-      })
-    }
-  },
-
 
   gotoLogin() {
     wx.navigateTo({
