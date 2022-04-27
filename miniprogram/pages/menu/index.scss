@@ -1,1 +1,83 @@
-/* pages/menu/index.wxss */
+@import '../../style/theme.scss';
+
+
+.header {
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 34rpx;
+  .back-icon {
+    width: 18rpx;
+    height: 32rpx;
+    margin-right: 30rpx;
+  }
+  .search-input {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f2;
+    width: 435rpx;
+    height: 64rpx;
+    border-radius: 10rpx;
+    padding: 0 18rpx;
+    box-sizing: border-box;
+    .search-icon {
+      width: 50rpx;
+      height: 50rpx;
+      margin-right: 10rpx;
+    }
+    input {
+      font-size: 24rpx;
+      line-height: 24rpx;
+      height: 24rpx;
+      color: #777777;
+      flex-grow: 1;
+    }
+  }
+}
+
+.menu-info {
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+
+  .store-info {
+    margin-top: 4rpx;
+    .store-name {
+      display: flex;
+      align-items: center;
+      font-size: 32rpx;
+      font-weight: 500;
+      margin-bottom: 10rpx;
+      image {
+        margin-left: 8rpx;
+        width: 16rpx;
+        height: 28rpx;
+      }
+    }
+    .store-location {
+      display: flex;
+      align-items: center;
+      .location-icon {
+        width: 22rpx;
+        height: 22rpx;
+        margin-right: 4rpx;
+      }
+      .distance-info {
+        color: #a6a6a6;
+        font-size: 22rpx;
+        display: flex;
+      }
+    }
+  }
+  .trade-type {
+    width: 102rpx;
+    height: 50rpx;
+    background-color: $primary-color;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 24rpx;
+  }
+}

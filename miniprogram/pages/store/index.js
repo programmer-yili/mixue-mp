@@ -1,11 +1,9 @@
 import storeApi from "../../api/store"
-import user from "../../api/user";
 const QQMapWX = require('../../utils/qqmap-wx-jssdk.min.js');
 const computedBehavior = require('miniprogram-computed').behavior
 const key = '5SOBZ-SJDL6-J47SK-MNS4A-OY7J2-4VBKA'
 const chooseLocation = requirePlugin('chooseLocation');
-import {userBehavior} from '../../behaviors/user-behavior'
-// pages/store/index.js
+import { userBehavior } from '../../behaviors/user-behavior'
 Page({
   behaviors: [userBehavior, computedBehavior],
 
@@ -21,7 +19,6 @@ Page({
       'CLOSED': '已关闭'
     },
     storeDetailShow: false,
-    currentStore: null,
     collapse: false,
     mapKey: key
   },
@@ -72,8 +69,7 @@ onMarkerTab(e) {
   const { markerId } = e.detail
   const store = this.data.storeList[markerId-1]
   this.setData({
-    storeDetailShow: true,
-    currentStore: store
+    storeDetailShow: true
   })
 },
 
@@ -100,8 +96,9 @@ onMarkerTab(e) {
     const { store } = e.currentTarget.dataset
     this.setData({
       storeDetailShow: true,
-      currentStore: store
     })
+    this.setCurrentStore(store);
+
   },
   colsapse() {
     this.setData({
@@ -114,6 +111,13 @@ onMarkerTab(e) {
   fetchStoreList() {
     storeApi.list(this.data.longitude, this.data.latitude).then(res=>{
       this.makeStoreList(res.data)
+    })
+  },
+
+  goToMenu(e) {
+    const { storeId } = e.currentTarget.dataset
+    wx.navigateTo({
+      url: `/pages/menu/index?storeId=${storeId}`,
     })
   },
 

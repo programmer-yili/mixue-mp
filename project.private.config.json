@@ -30,6 +30,13 @@
           "name": "门店列表",
           "pathName": "pages/store/index",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "菜单页面",
+          "pathName": "pages/menu/index",
+          "query": "storeId=bb4c2515626159f000d0dbbd38f1b42a",
           "scene": null,
           "launchMode": "default"
         }

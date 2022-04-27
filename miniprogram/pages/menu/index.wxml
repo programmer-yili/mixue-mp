@@ -1,2 +1,29 @@
-<!--pages/menu/index.wxml-->
-<text>pages/menu/index.wxml</text>
+
+<view class="header" style="{{ headerStyle }}">
+  <image class="back-icon" src="../../assets/icons/arrow-left.svg"></image>
+  <view class="search-input">
+    <image class="search-icon" src="../../assets/icons/search.svg"></image>
+    <input placeholder="请输入商品名" />
+  </view>
+</view>
+
+<view class="menu-info">
+  <view class="store-info">
+        <view class="store-name">
+          蜜雪冰城潘水路店
+          <image src="../../assets/icons/arrow-right.svg"></image>
+        </view>
+        <view class="store-location">
+          <image class="location-icon" src="../../assets/icons/location.svg"></image>
+          <view class="distance-info">
+            距离您 <view style="color: red; margin-left: 4rpx">12km</view>
+          </view>
+        </view>
+  </view>
+
+  <view class="trade-type">
+    自提
+  </view>
+
+
+</view>

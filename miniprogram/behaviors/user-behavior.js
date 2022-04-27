@@ -1,5 +1,5 @@
 import { BehaviorWithStore } from "mobx-miniprogram-bindings";
-import { user } from "../models/index";
+import { user, global } from "../models/index";
 
 export const userBehavior = BehaviorWithStore({
   storeBindings: [{
@@ -7,5 +7,12 @@ export const userBehavior = BehaviorWithStore({
     store: user,
     fields: ["phoneNumber", "desensitiveMobile", "isLogin", "location"],
     actions: ["updatePhoneNumber", "updateLocation"],
-  }]
+  },
+  {
+    namespace: "global",
+    store: global,
+    fields: ["currentStore"],
+    actions: ["setCurrentStore"],
+  }
+]
 });
