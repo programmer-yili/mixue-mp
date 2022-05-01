@@ -1,23 +1,28 @@
 // pages/menu/index.ts
 import { userBehavior } from '../../behaviors/user-behavior'
 import swiperApi from '../../api/swiper'
+import goodsApi from '../../api/goods'
+import goodsCategoryApi from '../../api/goods-category'
+
 Page({
   behaviors: [userBehavior],
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     headerStyle: '',
-    swiperList: []
+    swiperList: [],
+    goodsList: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad(options) {
     this.makeHeaderStyle();
     this.fetchSwiperList();
+    this.fetchData();
+  },
+
+  fetchData() {
+    goodsApi.listWithCategory().then(res=> {
+      this.setData({
+        goodsList: res.result
+      })
+    })
   },
   fetchSwiperList() {
     swiperApi.list().then(res=>{

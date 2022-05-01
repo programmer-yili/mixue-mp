@@ -51,5 +51,6 @@
   "simulatorPluginLibVersion": {},
   "appid": "wx4b7a472272dbe4ba",
   "libVersion": "2.24.0",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {}
 }

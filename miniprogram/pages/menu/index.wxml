@@ -29,85 +29,23 @@
 </view>
 
 <view class="menu">
-  <sidebar></sidebar>
+  <sidebar list="{{ goodsList }}"></sidebar>
   <scroll-view class="menu-list" scroll-y show-scrollbar="{{ false }}" enhanced>
     <force-swiper
     list="{{ swiperList }}"
     ></force-swiper>
     <view class="list">
-      <view class="section">
+      <view wx:for="{{ goodsList }}" wx:for-item="goodsCateogry" wx:key="index" class="section">
         <view class="section-header">
-          双炫冰激凌
+        {{ goodsCateogry.name }}
         </view>
         <view class="section-list">
-          <view class="item">
-            <image src="../../assets/images/product-image.png"></image>
+          <view class="item" wx:for="{{  goodsCateogry.goodsList }}" wx:key="unique" wx:for-item="goods">
+            <image src="{{ goods.cover }}"></image>
             <view class="info">
-              <view class="name">摩卡摇摇奶昔</view>
-              <view class="description">咖啡遇到冰激凌</view>
-              <view class="price">￥6</view>
-            </view>
-            <view class="add-icon">
-              <image src="../../assets/icons/plus.svg"></image>
-            </view>
-          </view>
-          <view class="item">
-            <image src="../../assets/images/product-image.png"></image>
-            <view class="info">
-              <view class="name">摩卡摇摇奶昔</view>
-              <view class="description">咖啡遇到冰激凌</view>
-              <view class="price">￥6</view>
-            </view>
-            <view class="add-icon">
-              <image src="../../assets/icons/plus.svg"></image>
-            </view>
-          </view>
-          <view class="item">
-            <image src="../../assets/images/product-image.png"></image>
-            <view class="info">
-              <view class="name">摩卡摇摇奶昔</view>
-              <view class="description">咖啡遇到冰激凌</view>
-              <view class="price">￥6</view>
-            </view>
-            <view class="add-icon">
-              <image src="../../assets/icons/plus.svg"></image>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class="section">
-        <view class="section-header">
-          双炫冰激凌
-        </view>
-        <view class="section-list">
-          <view class="item">
-            <image src="../../assets/images/product-image.png"></image>
-            <view class="info">
-              <view class="name">摩卡摇摇奶昔</view>
-              <view class="description">咖啡遇到冰激凌</view>
-              <view class="price">￥6</view>
-            </view>
-            <view class="add-icon">
-              <image src="../../assets/icons/plus.svg"></image>
-            </view>
-          </view>
-          <view class="item">
-            <image src="../../assets/images/product-image.png"></image>
-            <view class="info">
-              <view class="name">摩卡摇摇奶昔</view>
-              <view class="description">咖啡遇到冰激凌</view>
-              <view class="price">￥6</view>
-            </view>
-            <view class="add-icon">
-              <image src="../../assets/icons/plus.svg"></image>
-            </view>
-          </view>
-          <view class="item">
-            <image src="../../assets/images/product-image.png"></image>
-            <view class="info">
-              <view class="name">摩卡摇摇奶昔</view>
-              <view class="description">咖啡遇到冰激凌</view>
-              <view class="price">￥6</view>
+              <view class="name">{{ goods.name }}</view>
+              <view class="description">{{ goods.description }}</view>
+              <view class="price">￥{{ goods.price }}</view>
             </view>
             <view class="add-icon">
               <image src="../../assets/icons/plus.svg"></image>

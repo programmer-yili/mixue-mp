@@ -6,9 +6,7 @@ Component({
   properties: {
     list: {
       type: Array,
-      value: [
-        1,2,3
-      ]
+      value: []
     }
   },
 
