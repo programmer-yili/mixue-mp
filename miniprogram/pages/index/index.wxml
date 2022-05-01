@@ -1,17 +1,12 @@
 <view class="page">
 
     <!-- 轮播图区域 -->
-    <view wx:if="{{ swiperList.length }}" class="swiper-container">
-      <swiper bindchange="onSwiperChange">
-      <swiper-item wx:for="{{ swiperList }}" wx:key="index">
-        <image bindtap="onSwiperTab" data-item="{{ item }}" mode="aspectFill" src="{{ item.imageUri }}"></image>
-      </swiper-item>
-    </swiper>
-      <view class="dots">
-        <view class="dot {{ current !== index || 'active' }}" wx:for="{{ swiperList }}" wx:key="index"></view>
-      </view>
-    </view>
-
+    <force-swiper
+    list="{{ swiperList }}"
+    style="width: 100vw; height: 630rpx;"
+    dots-style="left: 50rpx;bottom: 58rpx;"
+    round
+    />
     <!-- 会员/积分区域 -->
     <view class="member-area">
       <view class="vip-box">

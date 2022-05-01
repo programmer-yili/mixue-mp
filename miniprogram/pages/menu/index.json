@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "sidebar": "../../components/sidebar/index",
+    "force-swiper": "../../components/force-swiper/index"
+  },
   "navigationStyle": "custom"
 }

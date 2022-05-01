@@ -1,12 +1,15 @@
 // pages/menu/index.ts
+import { userBehavior } from '../../behaviors/user-behavior'
+import swiperApi from '../../api/swiper'
 Page({
+  behaviors: [userBehavior],
 
   /**
    * 页面的初始数据
    */
   data: {
     headerStyle: '',
-
+    swiperList: []
   },
 
   /**
@@ -14,6 +17,20 @@ Page({
    */
   onLoad(options) {
     this.makeHeaderStyle();
+    this.fetchSwiperList();
+  },
+  fetchSwiperList() {
+    swiperApi.list().then(res=>{
+      this.setData({
+        swiperList: res.data
+      })
+    })
+  },
+  switchCurrentStore() {
+    this.setCurrentStore(null)
+    wx.navigateBack({
+      delta: 0,
+    })
   },
   makeHeaderStyle() {
     const { top, bottom, height } = wx.getMenuButtonBoundingClientRect()

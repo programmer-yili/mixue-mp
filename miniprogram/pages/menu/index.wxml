@@ -1,6 +1,6 @@
 
 <view class="header" style="{{ headerStyle }}">
-  <image class="back-icon" src="../../assets/icons/arrow-left.svg"></image>
+  <image class="back-icon" bindtap="switchCurrentStore" src="../../assets/icons/arrow-left.svg"></image>
   <view class="search-input">
     <image class="search-icon" src="../../assets/icons/search.svg"></image>
     <input placeholder="请输入商品名" />
@@ -9,14 +9,14 @@
 
 <view class="menu-info">
   <view class="store-info">
-        <view class="store-name">
-          蜜雪冰城潘水路店
+        <view class="store-name" bindtap="switchCurrentStore">
+          {{ currentStore.name }}
           <image src="../../assets/icons/arrow-right.svg"></image>
         </view>
         <view class="store-location">
           <image class="location-icon" src="../../assets/icons/location.svg"></image>
           <view class="distance-info">
-            距离您 <view style="color: red; margin-left: 4rpx">12km</view>
+            距离您 <view style="color: red; margin-left: 4rpx">{{ currentStore.distance }}km</view>
           </view>
         </view>
   </view>
@@ -27,3 +27,95 @@
 
 
 </view>
+
+<view class="menu">
+  <sidebar></sidebar>
+  <scroll-view class="menu-list" scroll-y show-scrollbar="{{ false }}" enhanced>
+    <force-swiper
+    list="{{ swiperList }}"
+    ></force-swiper>
+    <view class="list">
+      <view class="section">
+        <view class="section-header">
+          双炫冰激凌
+        </view>
+        <view class="section-list">
+          <view class="item">
+            <image src="../../assets/images/product-image.png"></image>
+            <view class="info">
+              <view class="name">摩卡摇摇奶昔</view>
+              <view class="description">咖啡遇到冰激凌</view>
+              <view class="price">￥6</view>
+            </view>
+            <view class="add-icon">
+              <image src="../../assets/icons/plus.svg"></image>
+            </view>
+          </view>
+          <view class="item">
+            <image src="../../assets/images/product-image.png"></image>
+            <view class="info">
+              <view class="name">摩卡摇摇奶昔</view>
+              <view class="description">咖啡遇到冰激凌</view>
+              <view class="price">￥6</view>
+            </view>
+            <view class="add-icon">
+              <image src="../../assets/icons/plus.svg"></image>
+            </view>
+          </view>
+          <view class="item">
+            <image src="../../assets/images/product-image.png"></image>
+            <view class="info">
+              <view class="name">摩卡摇摇奶昔</view>
+              <view class="description">咖啡遇到冰激凌</view>
+              <view class="price">￥6</view>
+            </view>
+            <view class="add-icon">
+              <image src="../../assets/icons/plus.svg"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="section">
+        <view class="section-header">
+          双炫冰激凌
+        </view>
+        <view class="section-list">
+          <view class="item">
+            <image src="../../assets/images/product-image.png"></image>
+            <view class="info">
+              <view class="name">摩卡摇摇奶昔</view>
+              <view class="description">咖啡遇到冰激凌</view>
+              <view class="price">￥6</view>
+            </view>
+            <view class="add-icon">
+              <image src="../../assets/icons/plus.svg"></image>
+            </view>
+          </view>
+          <view class="item">
+            <image src="../../assets/images/product-image.png"></image>
+            <view class="info">
+              <view class="name">摩卡摇摇奶昔</view>
+              <view class="description">咖啡遇到冰激凌</view>
+              <view class="price">￥6</view>
+            </view>
+            <view class="add-icon">
+              <image src="../../assets/icons/plus.svg"></image>
+            </view>
+          </view>
+          <view class="item">
+            <image src="../../assets/images/product-image.png"></image>
+            <view class="info">
+              <view class="name">摩卡摇摇奶昔</view>
+              <view class="description">咖啡遇到冰激凌</view>
+              <view class="price">￥6</view>
+            </view>
+            <view class="add-icon">
+              <image src="../../assets/icons/plus.svg"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+

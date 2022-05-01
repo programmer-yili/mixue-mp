@@ -1,39 +1,5 @@
 @import '../../style/theme.scss';
-.swiper-container {
-  width: 100vw;
-  height: 630rpx;
-  position: relative;
-  swiper {
-    height: 100%;
-    image {
-      width: 100%;
-      height: 100%;
-      border-bottom-left-radius: 20rpx;
-      border-bottom-right-radius: 20rpx;
-    }
-  }
 
-  .dots {
-    position: absolute;
-    left: 50rpx;
-    bottom: 58rpx;
-    display: inline-flex;
-    .dot {
-      width: 8rpx;
-      height: 8rpx;
-      background-color: #fff;
-      opacity: 0.5;
-      border-radius: 4rpx;
-      margin-left: 4rpx;
-      transition: all 0.5s;
-      &.active {
-        width: 29rpx;
-        opacity: 1;
-      }
-    }
-  }
-
-}
 
 .member-area {
   z-index: 2;

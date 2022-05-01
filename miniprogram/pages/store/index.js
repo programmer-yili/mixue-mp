@@ -71,6 +71,7 @@ onMarkerTab(e) {
   this.setData({
     storeDetailShow: true
   })
+  this.setCurrentStore(store)
 },
 
 
@@ -114,10 +115,9 @@ onMarkerTab(e) {
     })
   },
 
-  goToMenu(e) {
-    const { storeId } = e.currentTarget.dataset
+  goToMenu() {
     wx.navigateTo({
-      url: `/pages/menu/index?storeId=${storeId}`,
+      url: '/pages/menu/index'
     })
   },
 

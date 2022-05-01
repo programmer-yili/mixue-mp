@@ -1,0 +1,36 @@
+/* components/sidebar/index.wxss */
+@import '../../style/theme.scss';
+.sidebar {
+  width: 100%;
+  height: 1148rpx;
+  background-color: #f8f8f8;
+  .sidebar-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 138rpx;
+    position: relative;
+    .left-line {
+      width: 6rpx;
+      height: 48rpx;
+      background-color: $primary-color;
+      position: absolute;
+      left: 0;
+    }
+    &.active {
+      background-color: #ffffff;
+    }
+    .item-icon {
+      width: 58rpx;
+      height: 58rpx;
+      margin-bottom: 16rpx;
+    }
+    
+    .item-label {
+      font-size: 22rpx;
+      font-weight: 400;
+    }
+  }
+}

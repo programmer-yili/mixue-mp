@@ -1,0 +1,10 @@
+<view wx:if="{{ list.length }}" class="swiper-container" style="{{ style }}">
+      <swiper bindchange="onSwiperChange" class="{{round ? 'round' : ''}}">
+      <swiper-item wx:for="{{ list }}" wx:key="index">
+        <image bindtap="onSwiperTab" data-item="{{ item }}" mode="aspectFill" src="{{ item.imageUri }}"></image>
+      </swiper-item>
+    </swiper>
+      <view class="dots"  style="left: calc(50% - {{ (list.length * 8 + 21)/2 }}rpx); {{ dotsStyle }}">
+        <view class="dot {{ current !== index || 'active' }}" wx:for="{{ list }}" wx:key="index"></view>
+      </view>
+</view>

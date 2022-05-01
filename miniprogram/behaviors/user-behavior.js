@@ -9,7 +9,6 @@ export const userBehavior = BehaviorWithStore({
     actions: ["updatePhoneNumber", "updateLocation"],
   },
   {
-    namespace: "global",
     store: global,
     fields: ["currentStore"],
     actions: ["setCurrentStore"],
