@@ -7,6 +7,17 @@ Component({
     list: {
       type: Array,
       value: []
+    },
+    defaultCurrent: {
+      type: Number,
+      value: 0
+    }
+  },
+  observers: {
+    'defaultCurrent': function(defaultCurrent) {
+      this.data.current === defaultCurrent || this.setData({
+        current: defaultCurrent
+      })
     }
   },
 
@@ -26,6 +37,7 @@ Component({
       this.setData({
         current
       })
+      this.triggerEvent('on-change', { index: current })
     }
   }
 })

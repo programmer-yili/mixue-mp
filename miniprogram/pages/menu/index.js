@@ -9,13 +9,27 @@ Page({
   data: {
     headerStyle: '',
     swiperList: [],
-    goodsList: []
+    goodsList: [],
+    currentCategoryIndex: 0,
+    sidebarCurrent: 0
   },
   onLoad(options) {
     this.makeHeaderStyle();
     this.fetchSwiperList();
     this.fetchData();
   },
+
+  onSideBarChange(e) {
+    this.setData({
+      currentCategoryIndex: e.detail.index
+    })
+  },
+  onGoodsListChange(e) {
+    this.setData({
+      sidebarCurrent: e.detail.index
+    })
+  },
+
 
   fetchData() {
     goodsApi.listWithCategory().then(res=> {

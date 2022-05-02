@@ -29,31 +29,14 @@
 </view>
 
 <view class="menu">
-  <sidebar list="{{ goodsList }}"></sidebar>
-  <scroll-view class="menu-list" scroll-y show-scrollbar="{{ false }}" enhanced>
+  <sidebar list="{{ goodsList }}" bind:on-change="onSideBarChange" defaultCurrent="{{ sidebarCurrent }}"></sidebar>
+  <goods-list list="{{ goodsList }}" current="{{ currentCategoryIndex }}" bind:on-change="onGoodsListChange">
+  <view slot="before">
     <force-swiper
     list="{{ swiperList }}"
     ></force-swiper>
-    <view class="list">
-      <view wx:for="{{ goodsList }}" wx:for-item="goodsCateogry" wx:key="index" class="section">
-        <view class="section-header">
-        {{ goodsCateogry.name }}
-        </view>
-        <view class="section-list">
-          <view class="item" wx:for="{{  goodsCateogry.goodsList }}" wx:key="unique" wx:for-item="goods">
-            <image src="{{ goods.cover }}"></image>
-            <view class="info">
-              <view class="name">{{ goods.name }}</view>
-              <view class="description">{{ goods.description }}</view>
-              <view class="price">￥{{ goods.price }}</view>
-            </view>
-            <view class="add-icon">
-              <image src="../../assets/icons/plus.svg"></image>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-  </scroll-view>
+  </view>
+
+  </goods-list>
 </view>
 

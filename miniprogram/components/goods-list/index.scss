@@ -1,0 +1,68 @@
+/* components/goods-list/index.wxss */
+@import '../../style/theme.scss';
+
+.menu-list {
+  height: 1148rpx;
+  .list {
+    margin-top: 44rpx;
+    .section {
+      margin-bottom: 42rpx;
+      .section-header {
+        font-size: 22rpx;
+        font-weight: 500;
+        height: 50rpx;
+        background-color: #fff;
+        width: 100%;
+      }
+      .section-list {
+        .item {
+          margin-bottom: 48rpx;
+          display: flex;
+          width: 100%;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          image {
+            width: 158rpx;
+            height: 158rpx;
+            margin-right: 22rpx;
+            flex-shrink: 0;
+          }
+          .info {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            .name {
+              font-size: 28rpx;
+              font-weight: 500;
+            }
+            .description {
+              color: $gray-text-color;
+              font-size: 22rpx;
+            }
+            .price {
+              margin-top: 54rpx;
+              color: $primary-color;
+              font-size: 22rpx;
+            }
+          }
+          .add-icon {
+            width: 46rpx;
+            height: 46rpx;
+            background-color: $primary-color;
+            border-radius: 23rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-self: flex-end;
+            image {
+              width: 20rpx;
+              height: 20rpx;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
