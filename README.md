@@ -10,7 +10,7 @@ B站直播间地址：http://live.bilibili.com/23728616
 
 视频号：
 
-<img src="/Users/ilham/WeChatProjects/miniprogram-1/assets/README/IMG_1851.JPG" alt="IMG_1851" style="width:33%; float: left" />
+<img src="./assets/README/IMG_1851.JPG" alt="IMG_1851" style="width:33%; float: left" />
 
 
 
@@ -22,7 +22,7 @@ B站直播间地址：http://live.bilibili.com/23728616
 
 ## 功能划分
 
-![image-20220505140655502](/Users/ilham/WeChatProjects/miniprogram-1/assets/README/image-20220505140655502.png)
+![image-20220505140655502](./assets/README/image-20220505140655502.png)
 
 ## 项目看板
 
@@ -55,31 +55,31 @@ npm install
 
 ### 微信开发者工具打开项目
 
-![image-20220505134713146](/Users/ilham/WeChatProjects/miniprogram-1/assets/image-20220505134713146.png)
+![image-20220505134713146](./assets/image-20220505134713146.png)
 
 
 
 ### 选择云函数环境
 
-![image-20220505134855931](/Users/ilham/WeChatProjects/miniprogram-1/assets/README/image-20220505134855931.png)
+![image-20220505134855931](./assets/README/image-20220505134855931.png)
 
 
 
 ### 微信开发者工具构建npm
 
-![image-20220505135150719](/Users/ilham/WeChatProjects/miniprogram-1/assets/README/image-20220505135150719.png)
+![image-20220505135150719](./assets/README/image-20220505135150719.png)
 
 
 
 ### 云开发CMS初始化
 
-![image-20220505135308566](/Users/ilham/WeChatProjects/miniprogram-1/assets/README/image-20220505135308566.png)
+![image-20220505135308566](./assets/README/image-20220505135308566.png)
 
 ### 导入模型
 
 云开发CMS初始化完毕后创建新项目，进入新项目后，导入data目录下的scheme.json
 
-![image-20220505135647091](/Users/ilham/WeChatProjects/miniprogram-1/assets/README/image-20220505135647091.png)
+![image-20220505135647091](./assets/README/image-20220505135647091.png)
 
 
 
