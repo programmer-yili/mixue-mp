@@ -1,0 +1,38 @@
+.chart-bar {
+  box-sizing: border-box;
+  background-color: #ffffff;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  padding: 6rpx 24rpx 18rpx;
+  display: flex;
+  align-items: center;
+  .chart-icon {
+    width: 72rpx;
+    height: 90rpx;
+  }
+  .summary {
+    margin-left: 30rpx;
+    flex: 1;
+    display: flex;
+    align-items: baseline;
+    font-size: 22rpx;
+    .price {
+      font-size: 32rpx;
+    }
+  }
+  .checkout-btn {
+    width: 236rpx;
+    height: 90rpx;
+    border-radius: 8rpx;
+    line-height: 90rpx;
+    text-align: center;
+    background-color: #E60012;
+    color: #ffffff;
+    font-size: 32rpx;
+    &.disabled {
+      background-color: #F7F7F7;
+      color: #A6A6A6;
+    }
+  }
+}

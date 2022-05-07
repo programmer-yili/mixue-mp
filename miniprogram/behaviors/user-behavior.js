@@ -1,5 +1,5 @@
 import { BehaviorWithStore } from "mobx-miniprogram-bindings";
-import { user, global } from "../models/index";
+import { user, global, chart } from "../models/index";
 export const userBehavior = BehaviorWithStore({
   storeBindings: [{
     namespace: "user",
@@ -11,6 +11,12 @@ export const userBehavior = BehaviorWithStore({
     store: global,
     fields: ["currentStore"],
     actions: ["setCurrentStore"],
+  },
+  {
+    namespace: "chart",
+    store: chart,
+    fields: ["list", "totalPrice"],
+    actions: ["removeChart", "addChart"]
   }
 ]
 });

@@ -1,0 +1,9 @@
+<view class="chart-bar">
+  <image class="chart-icon" src="../../assets/images/chart.png"></image>
+  <view class="summary">
+    合计：<view style="font-weight: bold;">￥</view> <view class="price">{{ chart.totalPrice }}</view>
+  </view>
+  <view class="checkout-btn {{ chart.list.length === 0 ? 'disabled' : '' }}">
+    去结算
+  </view>
+</view>

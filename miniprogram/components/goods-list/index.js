@@ -1,8 +1,12 @@
 // components/goods-list/index.js
+import { userBehavior } from '../../behaviors/user-behavior'
+
 Component({
   /**
    * 组件的属性列表
    */
+  behaviors: [userBehavior],
+
   options: {
     multipleSlots: true 
   }, 
@@ -44,6 +48,6 @@ Component({
         index
       })
       this.triggerEvent('on-change', {index})
-    }
+    },
   }
 })

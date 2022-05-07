@@ -5,5 +5,7 @@ export { user } from './user'
 
 export { global } from './global'
 
+export { chart } from './chart'
+
 
 configure({ enforceActions: "observed" });

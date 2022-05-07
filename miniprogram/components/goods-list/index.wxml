@@ -7,13 +7,13 @@
         </view>
         <view class="section-list">
           <view class="item" wx:for="{{  goodsCateogry.goodsList }}" wx:key="unique" wx:for-item="goods">
-            <image src="{{ goods.cover }}"></image>
+            <image bindtap="remove" src="{{ goods.cover }}"></image>
             <view class="info">
               <view class="name">{{ goods.name }}</view>
               <view class="description">{{ goods.description }}</view>
               <view class="price">￥{{ goods.price }}</view>
             </view>
-            <view class="add-icon">
+            <view class="add-icon" bindtap="selectGoods">
               <image src="../../assets/icons/plus.svg"></image>
             </view>
           </view>
