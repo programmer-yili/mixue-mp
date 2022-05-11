@@ -1,0 +1,45 @@
+<view class="goods-detail">
+  <view class="goods-info">
+    <image class="goods-cover" src="{{ goods.cover }}"></image>
+    <view class="meta">
+      <view class="title">{{ goods.name }}</view>
+      <view class="description">{{ goods.description }}</view>
+    </view>
+  </view>
+  <view class="specs-area">
+    <view class="specs-category">
+      <view class="label">加料</view>
+      <view class="specs-list">
+        <view class="specs selected">
+          玫果冻 ￥1
+        </view>
+        <view class="specs">
+          玫果冻 ￥1
+        </view>
+        <view class="specs">
+          玫果冻 ￥1
+        </view>
+        <view class="specs">
+          玫果冻 ￥1
+        </view>
+      </view>
+    </view>
+    <view class="specs-category">
+      <view class="label">加料</view>
+      <view class="specs-list">
+        <view class="specs">
+          玫果冻 ￥1
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="action-area">
+    <view class="price">
+      <view class="unit">￥</view>
+      4
+    </view>
+    <view class="cart-btn">加入购物车</view>
+  </view>
+
+</view>

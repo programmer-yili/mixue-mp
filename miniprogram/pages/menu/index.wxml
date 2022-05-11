@@ -24,13 +24,11 @@
   <view class="trade-type">
     自提
   </view>
-
-
 </view>
 
 <view class="menu">
   <sidebar list="{{ goodsList }}" bind:on-change="onSideBarChange" defaultCurrent="{{ sidebarCurrent }}"></sidebar>
-  <goods-list list="{{ goodsList }}" current="{{ currentCategoryIndex }}" bind:on-change="onGoodsListChange">
+  <goods-list list="{{ goodsList }}" current="{{ currentCategoryIndex }}" bind:on-change="onGoodsListChange" bind:on-selected="onGoodsSelected">
   <view slot="before">
     <force-swiper
     list="{{ swiperList }}"
@@ -39,6 +37,9 @@
 
   </goods-list>
 </view>
-<chart-bar ></chart-bar>
+<cart-bar ></cart-bar>
+<dialog show="{{ goodsDialogShow }}">
+   <goods-detail goods="{{ selectedGoods }}"></goods-detail>
+</dialog>
 
 

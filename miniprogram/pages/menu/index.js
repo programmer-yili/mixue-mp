@@ -11,7 +11,9 @@ Page({
     swiperList: [],
     goodsList: [],
     currentCategoryIndex: 0,
-    sidebarCurrent: 0
+    sidebarCurrent: 0,
+    goodsDialogShow: false,
+    selectedGoods: null,
   },
   onLoad(options) {
     this.makeHeaderStyle();
@@ -27,6 +29,13 @@ Page({
   onGoodsListChange(e) {
     this.setData({
       sidebarCurrent: e.detail.index
+    })
+  },
+
+  onGoodsSelected(e) {
+    this.setData({
+      goodsDialogShow: true,
+      selectedGoods: e.detail
     })
   },
 

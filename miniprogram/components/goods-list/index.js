@@ -49,5 +49,9 @@ Component({
       })
       this.triggerEvent('on-change', {index})
     },
+    selectGoods(e) {
+      const { goods} = e.currentTarget.dataset
+      this.triggerEvent('on-selected', goods)
+    }
   }
 })
