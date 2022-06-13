@@ -7,28 +7,11 @@
     </view>
   </view>
   <view class="specs-area">
-    <view class="specs-category">
-      <view class="label">加料</view>
+    <view wx:for="{{ specsCategories }}" wx:key="unique" class="specs-category">
+      <view class="label">{{ item.label }}</view>
       <view class="specs-list">
-        <view class="specs selected">
-          玫果冻 ￥1
-        </view>
-        <view class="specs">
-          玫果冻 ￥1
-        </view>
-        <view class="specs">
-          玫果冻 ￥1
-        </view>
-        <view class="specs">
-          玫果冻 ￥1
-        </view>
-      </view>
-    </view>
-    <view class="specs-category">
-      <view class="label">加料</view>
-      <view class="specs-list">
-        <view class="specs">
-          玫果冻 ￥1
+        <view wx:for="{{ item.specs  }}"  wx:key="unique" class="specs">
+          {{ item.label }} {{ item.price === 0 ? '': ('￥' + item.price)  }}
         </view>
       </view>
     </view>
