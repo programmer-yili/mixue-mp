@@ -1,6 +1,6 @@
 import { observable, action } from "mobx-miniprogram";
 
-const isObjectEquels = (obj1, obj2) =>{
+const isObjectEquels = (obj1, obj2) => {
   let flag = true;
   Object.keys(obj2).forEach((item)=>{
     if(isObject(obj2[item])) {
@@ -23,6 +23,11 @@ export const chart = observable({
     let totalPrice = 0
     this.list.forEach(item=>{
       totalPrice += item.price
+      let specsPrice = 0
+      item.specs.forEach(specs=>{
+        specsPrice += specs.price
+      })
+      totalPrice += specsPrice
     })
     return totalPrice;
   },

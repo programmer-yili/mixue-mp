@@ -7,10 +7,12 @@
     </view>
   </view>
   <view class="specs-area">
-    <view wx:for="{{ specsCategories }}" wx:key="unique" class="specs-category">
-      <view class="label">{{ item.label }}</view>
+    <view wx:for="{{ specsCategories }}" wx:for-index="specsCategoryIndex" wx:key="unique" wx:for-item="specsCategory" class="specs-category">
+      <view class="label">{{ specsCategory.label }}</view>
       <view class="specs-list">
-        <view wx:for="{{ item.specs  }}"  wx:key="unique" class="specs">
+        <view wx:for="{{ specsCategory.specs  }}"  wx:key="unique" class="specs {{ specsCategory.specsIndex === index ? 'selected': '' }}"
+          bindtap="onSpecsTap" data-specs="{{ item }}" data-specs-category-index="{{ specsCategoryIndex }}"
+        >
           {{ item.label }} {{ item.price === 0 ? '': ('￥' + item.price)  }}
         </view>
       </view>
@@ -20,9 +22,9 @@
   <view class="action-area">
     <view class="price">
       <view class="unit">￥</view>
-      4
+      {{totalPrice}}
     </view>
-    <view class="cart-btn">加入购物车</view>
+    <view class="cart-btn" bindtap="add">加入购物车</view>
   </view>
 
 </view>
