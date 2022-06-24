@@ -15,8 +15,8 @@ export const userBehavior = BehaviorWithStore({
   {
     namespace: "chart",
     store: chart,
-    fields: ["list", "totalPrice"],
-    actions: ["removeChart", "addChart"]
+    fields: ["list", "totalPrice", "selectedGoods", "specsCategories"],
+    actions: ["removeChart", "addChart", "selectGoods"]
   }
 ]
 });

@@ -13,7 +13,6 @@ Page({
     currentCategoryIndex: 0,
     sidebarCurrent: 0,
     goodsDialogShow: false,
-    selectedGoods: null,
   },
   onLoad(options) {
     this.makeHeaderStyle();
@@ -33,9 +32,9 @@ Page({
   },
 
   onGoodsSelected(e) {
+    this.selectGoods(e.detail)
     this.setData({
       goodsDialogShow: true,
-      selectedGoods: e.detail
     })
   },
 

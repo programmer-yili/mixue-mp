@@ -39,7 +39,7 @@
 </view>
 <cart-bar ></cart-bar>
 <dialog show="{{ goodsDialogShow }}">
-   <goods-detail goods="{{ selectedGoods }}"></goods-detail>
+   <goods-detail goods="{{ chart.selectedGoods }}"></goods-detail>
 </dialog>
 
 
