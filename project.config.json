@@ -1,7 +1,8 @@
 {
   "description": "项目配置文件",
   "packOptions": {
-    "ignore": []
+    "ignore": [],
+    "include": []
   },
   "cloudfunctionRoot": "cloud-functions/",
   "miniprogramRoot": "miniprogram/",
@@ -51,6 +52,11 @@
   "simulatorPluginLibVersion": {},
   "appid": "wx4b7a472272dbe4ba",
   "libVersion": "2.24.0",
-  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
-  "condition": {}
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
+  "condition": {},
+  "srcMiniprogramRoot": "miniprogram/",
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
 }
