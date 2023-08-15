@@ -41,7 +41,20 @@ git clone git@github.com:programmer-yili/mixue-mp.git
 # 国内镜像加速节点：git@gitee.com:programmer-yili/mixue-mp.git
 ```
 
+## 复制配置文件并配置内容
 
+```shell
+cp miniprogram/config.js.example miniprogram/config.js
+```
+
+
+
+```js
+// 内容替换成你的云开发ID
+export const CLOUD_ENV_ID = 'mxbc-5gm3bllufe236097'
+```
+
+![image-20220505134713146](./assets/cloud-1.png)
 
 ### npm依赖安装
 

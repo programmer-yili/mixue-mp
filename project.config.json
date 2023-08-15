@@ -46,7 +46,8 @@
     "useCompilerPlugins": [
       "sass"
     ],
-    "ignoreUploadUnusedFiles": true
+    "ignoreUploadUnusedFiles": true,
+    "condition": false
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
