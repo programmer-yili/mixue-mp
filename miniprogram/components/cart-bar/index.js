@@ -24,6 +24,11 @@ Component({
       this.setData({
         showList: !this.data.showList
       })
+    },
+    onCartListHide() {
+      this.setData({
+        showList: false
+      })
     }
   }
 })

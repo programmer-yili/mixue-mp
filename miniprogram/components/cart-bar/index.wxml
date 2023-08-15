@@ -8,7 +8,8 @@
   </view>
 </view>
 
-<view wx:if="{{ showList }}" class="order-list">
+<van-popup show="{{ showList }}" bind:close="onCartListHide"   position="bottom" safe-area-inset-bottom	round	>
+<view class="order-list">
   <view class="item" wx:for="{{ chart.list }}">
     <image class="pic" src="{{ item.cover }}"></image>
     <view class="label">{{ item.name }}</view>
@@ -20,3 +21,4 @@
     </view>
   </view>
 </view>
+</van-popup>

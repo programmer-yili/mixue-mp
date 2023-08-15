@@ -40,15 +40,9 @@
 
 
 .order-list {
-  position: fixed;
-  bottom: 0;
   box-sizing: border-box;
-  background-color: white;
-  border-radius: 40rpx;
-  box-shadow: 0 -2rpx 4px rgba($color: #000000, $alpha: 0.2);
   width: 100vw;
-  transition: all 0.5s;
-  padding: 40rpx 40rpx 144rpx;
+  padding: 40rpx;
   .item {
     display: flex;
     align-items: center;
