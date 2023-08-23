@@ -1,24 +1,40 @@
 <view class="chart-bar">
   <image bindtap="onClickBag" class="chart-icon" src="../../assets/images/chart.png"></image>
   <view class="summary">
-    合计：<view style="font-weight: bold;">￥</view> <view class="price">{{ chart.totalPrice }}</view>
+    合计：<view style="font-weight: bold;">￥</view>
+    <view class="price">{{ chart.totalPrice }}</view>
   </view>
   <view class="checkout-btn {{ chart.list.length === 0 ? 'disabled' : '' }}">
     去结算
   </view>
 </view>
 
-<van-popup show="{{ showList }}" bind:close="onCartListHide"   position="bottom" safe-area-inset-bottom	round	>
-<view class="order-list">
-  <view class="item" wx:for="{{ chart.list }}">
-    <image class="pic" src="{{ item.cover }}"></image>
-    <view class="label">{{ item.name }}</view>
-    <view class="specs">
-      {{ item.specsList }}
+<van-popup show="{{ showList }}" bind:close="onCartListHide" position="bottom" safe-area-inset-bottom round>
+  <view class="cart-header">
+    <view class="cart-header__title">
+      已选商品
     </view>
-    <view class="number">
-    {{ item.count }}
+    <view class="cart-header__clear-btn">
+      <van-icon name="delete-o" />
+      清空
     </view>
   </view>
-</view>
+  <view class="order-list">
+    <view class="item" wx:for="{{ chart.list }}">
+      <image class="pic" src="{{ item.cover }}"></image>
+      <view class="meta">
+        <view class="label">{{ item.name }}</view>
+        <view class="specs">
+          {{ item.specsList }}
+        </view>
+        <view class="price">
+          {{ item.price }}
+        </view>
+      </view>
+
+      <van-stepper value="{{ item.count }}" bind:change="onChange" theme="round" />
+
+    </view>
+
+  </view>
 </van-popup>

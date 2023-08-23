@@ -1,2 +1,20 @@
-$primary-color: #E60012;
-$gray-text-color: #777777;
+view {
+  --text-color: #333333;
+  --gray-text-color: #777777;
+  --primary-color: #E60012;
+  --font-size-lg: 16px;
+  --font-size-md: 14px;
+  --font-weight-bold: 500;
+  --red: #d32d25;
+}
+
+
+$primary-color: var(--primary-color);
+$gray-text-color: var(--gray-text-color);
+$text-color: var(--text-color);
+$font-size-lg: var(--font-size-lg);
+$font-size-md: var(--font-size-md);
+$font-weight-bold: var(--font-weight-bold);
+
+$danger-color: var(--red);
+

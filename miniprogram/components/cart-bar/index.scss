@@ -1,3 +1,7 @@
+@import '../../style/theme.scss';
+
+
+
 .chart-bar {
   z-index: 101;
   box-sizing: border-box;
@@ -38,7 +42,20 @@
   }
 }
 
-
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 40rpx 40rpx 0;
+  &__title {
+    color: $text-color;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+  }
+  &__clear-btn {
+    font-size: $font-size-md;
+    color: $gray-text-color;
+  }
+}
 .order-list {
   box-sizing: border-box;
   width: 100vw;
@@ -49,23 +66,34 @@
     margin-bottom: 20rpx;
     padding-bottom: 20rpx;
     border-bottom: 1px solid #f1f1f1;
+    gap: 20rpx;
+
+
     .pic {
       width: 120rpx;
       height: 120rpx;
     }
-
-    .label {
-      font-size: 35rpx;
-      margin-left: 20rpx;
-
-    }
-
-    .specs {
-      margin-left: 20rpx;
-      font-size: 24rpx;
-      color: #999;
+    .meta {
       flex: 1;
+      .label {
+        font-size: $font-size-lg;
+      }
+      .specs {
+        font-size: 24rpx;
+        color: #999;
+        flex: 1;
+      }
+
+      .price {
+        color: $danger-color;
+        font-size: $font-size-md;
+        display: flex;
+        &::before {
+         content: '￥'; 
+        }
+      }
     }
+
 
     .number {
       font-size: 35rpx;
